@@ -21,9 +21,9 @@
   <Network>bridge</Network>
   <Shell>bash</Shell>
   <Privileged>false</Privileged>
-  <Support>https://github.com/Elevatormusic/strata-unraid-amd/issues</Support>
+  <Support>https://github.com/Aurial/strata-unraid-amd/issues</Support>
   <Project>https://github.com/Niko1221/Strata</Project>
-  <ReadMe>https://raw.githubusercontent.com/Elevatormusic/strata-unraid-amd/main/README.md</ReadMe>
+  <ReadMe>https://raw.githubusercontent.com/Aurial/strata-unraid-amd/main/README.md</ReadMe>
   <Overview>Strata AMD runs the Qwen3.8-Flash-Next mixture-of-experts model on an AMD GPU plus system RAM, and serves an OpenAI- and Anthropic-compatible API, a chat page and a live monitor. This template runs Strata's official image, ROCm build. For NVIDIA cards use the separate Strata template instead.
 
 Requirements: the amdgpu kernel driver, which Unraid ships as standard (Linux 6.8+) — no driver plugin needed. Pick your card family under Branch when installing: latest-rocm-gfx120x for the RX 9000 series and Radeon AI PRO R9700 (default), latest-rocm-gfx110x for the RX 7000 series, latest-rocm-gfx1151 for Ryzen AI Max (Strix Halo). The RX 6000 series has no image yet. You also need 32 GB of RAM or more (more RAM allows a larger, better model) and room for the model on an SSD pool.
@@ -38,8 +38,8 @@ Template and Unraid problems: the Support link. Strata itself: the Project link.
   <Category>AI:</Category>
   <ExtraSearchTerms>llm qwen local ai openai anthropic api inference chat amd rocm radeon rdna gpu</ExtraSearchTerms>
   <WebUI>http://[IP]:[PORT:8080]/</WebUI>
-  <TemplateURL>https://raw.githubusercontent.com/Elevatormusic/strata-unraid-amd/main/templates/strata-amd.xml</TemplateURL>
-  <Icon>https://raw.githubusercontent.com/Elevatormusic/strata-unraid-amd/main/icon.png</Icon>
+  <TemplateURL>https://raw.githubusercontent.com/Aurial/strata-unraid-amd/main/templates/strata-amd.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/Aurial/strata-unraid-amd/main/icon.png</Icon>
   <License>MIT</License>
   <!-- From Strata's docs/DOCKER.md (AMD section): /dev/kfd and /dev/dri with the video and render groups give the
        container the card; memlock lets the engine pin the RAM it uses for the model, shm-size gives it shared

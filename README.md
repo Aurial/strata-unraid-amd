@@ -5,7 +5,7 @@ which runs the Qwen3.8-Flash-Next mixture-of-experts model on an AMD GPU plus sy
 Anthropic-compatible API, a chat page and a live monitor.
 
 The template runs Strata's official image, `ghcr.io/niko1221/strata:latest-rocm-gfx120x`. Report template or Unraid
-problems in this repository's [issues](https://github.com/Elevatormusic/strata-unraid-amd/issues), and problems with
+problems in this repository's [issues](https://github.com/Aurial/strata-unraid-amd/issues), and problems with
 Strata itself to the [Strata project](https://github.com/Niko1221/Strata/issues).
 
 ## Why a separate listing
