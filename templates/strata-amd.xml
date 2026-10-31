@@ -41,10 +41,12 @@ Template and Unraid problems: the Support link. Strata itself: the Project link.
   <TemplateURL>https://raw.githubusercontent.com/Aurial/strata-unraid-amd/main/templates/strata-amd.xml</TemplateURL>
   <Icon>https://raw.githubusercontent.com/Aurial/strata-unraid-amd/main/icon.png</Icon>
   <License>MIT</License>
-  <!-- From Strata's docs/DOCKER.md (AMD section): /dev/kfd and /dev/dri with the video and render groups give the
-       container the card; memlock lets the engine pin the RAM it uses for the model, shm-size gives it shared
+  <!-- From Strata's docs/DOCKER.md (AMD section): /dev/kfd and /dev/dri give the
+       container the card (the render/video groups from the docs are omitted: Unraid
+       has no render group and containers run as root, so --group-add render fails
+       with "unable to find group render"); memlock lets the engine pin the RAM it uses for the model, shm-size gives it shared
        memory, and stop-timeout gives the model two minutes to unload (Docker's default 10 s kills it, exit 137). -->
-  <ExtraParams>--device /dev/kfd --device /dev/dri --group-add video --group-add render --ulimit memlock=-1:-1 --shm-size=2g --stop-timeout 120</ExtraParams>
+  <ExtraParams>--device /dev/kfd --device /dev/dri --group-add video --ulimit memlock=-1:-1 --shm-size=2g --stop-timeout 120</ExtraParams>
   <Requires>**amdgpu** kernel driver — Unraid ships it, no driver plugin needed (Linux 6.8+). An RDNA 3 / RDNA 4 / Strix Halo card: RX 7000 series, RX 9000 series, Radeon AI PRO R9700, or Ryzen AI Max — pick the matching **Branch** at install (gfx120x / gfx110x / gfx1151); the RX 6000 series has no image yet. Do not set a memory limit on the container: Strata plans from the server's whole RAM. Do not pin CPUs: the engine sets its own thread affinity.</Requires>
 
   <Config Name="WebUI / API port" Target="8080" Default="8080" Mode="tcp" Description="Chat page, monitor and the API (/v1 for OpenAI clients, the root URL for Anthropic clients)." Type="Port" Display="always" Required="true" Mask="false">8080</Config>
