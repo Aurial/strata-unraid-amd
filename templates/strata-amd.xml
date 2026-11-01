@@ -43,7 +43,7 @@ Template and Unraid problems: the Support link. Strata itself: the Project link.
   <License>MIT</License>
   <!-- From Strata's docs/DOCKER.md (AMD section): /dev/kfd and /dev/dri give the
        container the card (the render/video groups from the docs are omitted: Unraid
-       has no render group and containers run as root, so --group-add render fails
+       has no render group and containers run as root, so adding a 'render' group fails
        with "unable to find group render"); memlock lets the engine pin the RAM it uses for the model, shm-size gives it shared
        memory, and stop-timeout gives the model two minutes to unload (Docker's default 10 s kills it, exit 137). -->
   <ExtraParams>--device /dev/kfd --device /dev/dri --group-add video --ulimit memlock=-1:-1 --shm-size=2g --stop-timeout 120</ExtraParams>
